@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MelleeStatesment.cpp" />
+    <ClCompile Include="MooraStatesment.cpp" />
+    <ClCompile Include="Parser.cpp" />
+    <ClCompile Include="StateMelee.cpp" />
+    <ClCompile Include="StateMoora.cpp" />
+    <ClCompile Include="TransferMelleToMoora.cpp" />
+    <ClCompile Include="TransferMoorToMellee.cpp" />
+    <ClCompile Include="DeterminateAutomates.cpp" />
+    <ClCompile Include="DeterStatesment.cpp" />
+    <ClCompile Include="EquivalenceСhecking.cpp" />
+    <ClCompile Include="NotDeterStatesment.cpp" />
+    <ClCompile Include="StateDeterm.cpp" />
+    <ClCompile Include="StateNotDeterm.cpp" />
+    <ClCompile Include="Minimizate.cpp" />
+    <ClCompile Include="TransferMelleeToNoDeterm.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="json.hpp" />
+    <ClInclude Include="MelleeStatesment.h" />
+    <ClInclude Include="MooraStatesment.h" />
+    <ClInclude Include="Parser.h" />
+    <ClInclude Include="StateMelee.h" />
+    <ClInclude Include="StateMoora.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TransferMelleToMoora.h" />
+    <ClInclude Include="TransferMoorToMellee.h" />
+    <ClInclude Include="DeterminateAutomates.h" />
+    <ClInclude Include="DeterStatesment.h" />
+    <ClInclude Include="EquivalenceСhecking.h" />
+    <ClInclude Include="NotDeterStatesment.h" />
+    <ClInclude Include="StateDeterm.h" />
+    <ClInclude Include="StateNotDeterm.h" />
+    <ClInclude Include="Minimizate.h" />
+    <ClInclude Include="TransferMelleeToNoDeterm.h" />
+  </ItemGroup>
+</Project>

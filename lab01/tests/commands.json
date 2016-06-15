@@ -1,0 +1,7 @@
+{
+	"commands": [{
+		"type": "determine",
+		"arguments": ["StateMachineX"]
+	}]
+
+}
