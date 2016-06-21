@@ -1,0 +1,7 @@
+{
+	"commands": [{
+		"type": "translate-mur-to-mil",
+		"arguments": ["StateMachineX"]
+	}]
+
+}

@@ -13,7 +13,8 @@ CViewAutomates STranslateMooreToMeale::Translate(CViewAutomates const &moore)
 		{
 			if (count > 0)
 			{
-				SSymbols symbols = SSymbols(cellMatrix.second.to, from, cellMatrix.first, (*columnTable.second.begin()).second.output);
+				auto ccc = (*cellMatrix.second.begin());
+				SSymbols symbols = SSymbols((*cellMatrix.second.begin()).to, from, cellMatrix.first, (*(*columnTable.second.begin()).second.begin()).output);
 				meale.addState(symbols);
 			}
 			++count;

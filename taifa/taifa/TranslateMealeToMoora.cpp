@@ -25,7 +25,7 @@ CViewAutomates STranslateMealeToMoore::Translate(CViewAutomates const &meale)
 		{
 			if (count != tableColumn.second.size() && count > 0)
 			{
-				SSymbols autonomCell = SSymbols(cell.second.to, tableColumn.first, cell.first, cell.second.output);
+				SSymbols autonomCell = SSymbols((*cell.second.begin()).to, tableColumn.first, cell.first, (*cell.second.begin()).output);
 				if (newStates.empty())
 				{
 					newStates.push_back(autonomCell);
@@ -65,7 +65,7 @@ CViewAutomates STranslateMealeToMoore::Translate(CViewAutomates const &meale)
 			auto cell = state.second;
 			for (size_t i = 0; i < newStates.size(); ++i)
 			{
-				if (newStates.at(i) == cell)
+				if (newStates.at(i) == (*cell.begin()))
 				{
 					SSymbols element = SSymbols(newNames.at(i), newNames.at(count), state.first, "");
 					moore.addState(element);
