@@ -6,14 +6,14 @@ using MinimizateTable = std::map<std::string, std::map<std::string, std::vector<
 class CMinimizate
 {
 public:
-	CMinimizate(table const & mealy);
-	table GetMinimizateMeale() const;
+	CMinimizate() = default;
+	CMinimizate(CViewAutomates const & mealy);
+	CViewAutomates GetMinimizedMachine() const;
 private:
-	void FirstFillTable();
-	void FillTable();
-	bool IsEquale() const;
-	bool IsEqualeTable() const;
-	void Output(MinimizateTable const & table);
+	void FirstFillingTable(); 
+	void FillingTable();
+	void CompilingEmptyTable();
+	bool IsEqualeTable() const; 
 private:
 	table m_mealy;
 	MinimizateTable m_predTable;

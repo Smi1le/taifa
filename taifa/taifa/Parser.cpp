@@ -94,7 +94,9 @@ void CParser::ParseInputCommand(std::string const &command)
 			else if (type == "translate-mur-to-mil") { TranslateMooreToMeale(); }
 			else if (type == "minimize-mur")
 			{
-
+				TranslateMooreToMeale();
+				Minimize();
+				TranslateMealeToMoore();
 			}
 			else if (type == "minimize-mil")
 			{
@@ -122,9 +124,9 @@ void CParser::TranslateMealeToMoore()
 
 void CParser::Minimize()
 {
-	CMinimizate(m_automat.GetMachine());
-	cout << "******************" << endl;
-	//OutputMeale(m_automat);
+	CMinimizate minimize(m_automat);
+	m_automat = minimize.GetMinimizedMachine();
+	OutputMeale(m_automat);
 }
 
 
