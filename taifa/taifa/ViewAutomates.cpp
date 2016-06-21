@@ -29,7 +29,6 @@ void CViewAutomates::addState(SSymbols const &elementMatrix)
 		}
 		else
 		{
-			
 			multiset<SElementMatrix, compareElement> many;
 			for (auto const &it2 : m_meale.at(vertexFrom).at(symbolInput))
 			{

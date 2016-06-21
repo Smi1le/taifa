@@ -147,6 +147,7 @@
   <ItemGroup>
     <ClInclude Include="Determinate.h" />
     <ClInclude Include="json.hpp" />
+    <ClInclude Include="Minimizate.h" />
     <ClInclude Include="TranslateMealeToMoore.h" />
     <ClInclude Include="TranslateMooreToMeale.h" />
     <ClInclude Include="ViewAutomates.h" />
@@ -155,6 +156,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Minimizate.cpp" />
     <ClCompile Include="Determinate.cpp" />
     <ClCompile Include="TranslateMealeToMoora.cpp" />
     <ClCompile Include="TranslateMooreToMeale.cpp" />

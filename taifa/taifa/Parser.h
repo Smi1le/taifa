@@ -18,6 +18,7 @@ private:
 	void TranslateMooreToMeale();
 	void TranslateMealeToMoore();
 	void DeterminateMeale();
+	void Minimize();
 	void OutputMeale() const;
 	void OutputMeale(CViewAutomates const &automat) const;
 	void OutputMoore(CViewAutomates const &automat) const;
