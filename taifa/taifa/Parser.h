@@ -16,6 +16,7 @@ private:
 	void SaveToJsonFile();
 	void TranslateMooreToMeale();
 	void TranslateMealeToMoore();
+	void Minimize();
 	void OutputMeale() const;
 	void OutputMeale(CViewAutomates const &automat) const;
 	void OutputMoore(CViewAutomates const &automat) const;

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 #include "Parser.h"
+#include "Minimizate.h"
 
 using namespace std;
 using json = nlohmann::json;
@@ -97,7 +98,7 @@ void CParser::ParseInputCommand(std::string const &command)
 			}
 			else if (type == "minimize-mil")
 			{
-
+				Minimize();
 			}
 			else if (type == "determine")
 			{
@@ -117,6 +118,13 @@ void CParser::TranslateMooreToMeale()
 void CParser::TranslateMealeToMoore()
 {
 	OutputMoore(STranslateMealeToMoore::Translate(m_automat));
+}
+
+void CParser::Minimize()
+{
+	CMinimizate(m_automat.GetMachine());
+	cout << "******************" << endl;
+	//OutputMeale(m_automat);
 }
 
 

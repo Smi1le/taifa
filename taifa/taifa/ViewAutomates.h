@@ -15,7 +15,8 @@ struct SElementMatrix
 	std::string to;
 };
 
-using table = std::map<std::string, std::map<std::string, SElementMatrix>>;//Первая строка - имя вершины откуда идет, вторая строка - по какому символу
+using table = std::map<std::string, std::map<std::string, SElementMatrix>>;
+//Первая строка - имя вершины откуда идет, вторая строка - по какому символу
 
 class CViewAutomates
 {

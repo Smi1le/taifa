@@ -1,6 +1,6 @@
 {
 	"commands": [{
-		"type": "translate-mil-to-mur",
+		"type": "minimize-mil",
 		"arguments": ["StateMachineX"]
 	}]
 
