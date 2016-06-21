@@ -3,6 +3,7 @@
 #include "ViewAutomates.h"
 #include "TranslateMooreToMeale.h"
 #include "TranslateMealeToMoore.h"
+#include "Determinate.h"
 
 using VectorPairs = std::vector<std::pair<std::string, std::string>>;
 
@@ -16,6 +17,7 @@ private:
 	void SaveToJsonFile();
 	void TranslateMooreToMeale();
 	void TranslateMealeToMoore();
+	void DeterminateMeale();
 	void Minimize();
 	void OutputMeale() const;
 	void OutputMeale(CViewAutomates const &automat) const;

@@ -1,0 +1,44 @@
+{
+    "state machine": [{
+        "id": "StateMachineX",
+        "type": "meale",
+        "states": [{
+            "id": "S0"
+        }, {
+            "id": "S1"
+        }, {
+            "id": "S2"
+        }],
+        "transitions": [{
+            "input": "x1",
+            "output": "y2",
+            "from": "S0",
+            "to": "S2"
+        }, {
+            "input": "x2",
+            "output": "y1",
+            "from": "S0",
+            "to": "S1"
+        }, {
+            "input": "x1",
+            "output": "y1",
+            "from": "S1",
+            "to": "S0"
+        }, {
+            "input": "x2",
+            "output": "y3",
+            "from": "S1",
+            "to": "S2"
+        }, {
+            "input": "x1",
+            "output": "y2",
+            "from": "S2",
+            "to": "S1"
+        }, {
+            "input": "x2",
+            "output": "y1",
+            "from": "S2",
+            "to": "S0"
+        }]
+    }]
+}

@@ -102,10 +102,7 @@ void CParser::ParseInputCommand(std::string const &command)
 			{
 				Minimize();
 			}
-			else if (type == "determine")
-			{
-
-			}
+			else if (type == "determine") { DeterminateMeale(); }
 		}
 	}
 	SaveToJsonFile();
@@ -122,6 +119,10 @@ void CParser::TranslateMealeToMoore()
 	OutputMoore(STranslateMealeToMoore::Translate(m_automat));
 }
 
+void CParser::DeterminateMeale()
+{
+	OutputMeale(SDeterminate::Determinate(m_automat));
+}
 void CParser::Minimize()
 {
 	CMinimizate minimize(m_automat);
@@ -145,8 +146,8 @@ void CParser::OutputMeale() const
 		{
 			cout << "******************************************************" << endl;
 			cout << "input symbol -> " << it2.first << endl;
-			cout << "output symbol -> " << it2.second.output << endl;
-			cout << "Vertex to -> " << it2.second.to << endl;
+			cout << "output symbol -> " << (*it2.second.begin()).output << endl;
+			cout << "Vertex to -> " << (*it2.second.begin()).to << endl;
 			cout << "******************************************************" << endl;
 		}
 		cout << ">--------------------------------<" << endl;
@@ -159,12 +160,12 @@ void CParser::OutputMoore() const
 	for (auto const & it : m_automat.GetMachine())
 	{
 		cout << "Vertex -> " << it.first << endl;
-		cout << "output symbol -> " << (*it.second.begin()).second.output << endl;
+		cout << "output symbol -> " << (*(*it.second.begin()).second.begin()).output << endl;
 		for (auto const & it2 : it.second)
 		{
 			cout << "******************************************************" << endl;
 			cout << "input symbol -> " << it2.first << endl;
-			cout << "Vertex to -> " << it2.second.to << endl;
+			cout << "Vertex to -> " << (*it2.second.begin()).to << endl;
 			cout << "******************************************************" << endl;
 		}
 		cout << ">--------------------------------<" << endl;
@@ -176,12 +177,12 @@ void CParser::OutputMoore(CViewAutomates const &automat) const
 	for (auto const & it : automat.GetMachine())
 	{
 		cout << "Vertex -> " << it.first << endl;
-		cout << "output symbol -> " << (*it.second.begin()).second.output << endl;
+		cout << "output symbol -> " << (*(*it.second.begin()).second.begin()).output << endl;
 		for (auto const & it2 : it.second)
 		{
 			cout << "******************************************************" << endl;
 			cout << "input symbol -> " << it2.first << endl;
-			cout << "Vertex to -> " << it2.second.to << endl;
+			cout << "Vertex to -> " << (*it2.second.begin()).to << endl;
 			cout << "******************************************************" << endl;
 		}
 		cout << ">--------------------------------<" << endl;
@@ -197,8 +198,8 @@ void CParser::OutputMeale(CViewAutomates const &automat) const
 		{
 			cout << "******************************************************" << endl;
 			cout << "input symbol -> " << it2.first << endl;
-			cout << "output symbol -> " << it2.second.output << endl;
-			cout << "Vertex to -> " << it2.second.to << endl;
+			cout << "output symbol -> " << (*it2.second.begin()).output << endl;
+			cout << "Vertex to -> " << (*it2.second.begin()).to << endl;
 			cout << "******************************************************" << endl;
 		}
 		cout << ">--------------------------------<" << endl;

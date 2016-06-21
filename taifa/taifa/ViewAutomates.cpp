@@ -11,7 +11,10 @@ void CViewAutomates::addState(SSymbols const &elementMatrix)
 	auto posVertexFrom = m_meale.find(vertexFrom);
 	if (posVertexFrom == m_meale.end())
 	{
-		map<string, SElementMatrix> element = {{symbolInput, SElementMatrix(elementMatrix.output, elementMatrix.to)}};
+		multiset<SElementMatrix, compareElement> many;
+		auto elem = SElementMatrix(elementMatrix.output, elementMatrix.to);
+		many.insert(elem);
+		map<string, multiset<SElementMatrix, compareElement>> element = {{symbolInput, many }};
 		m_meale.insert({ vertexFrom,  element });
 	}
 	else
@@ -20,10 +23,21 @@ void CViewAutomates::addState(SSymbols const &elementMatrix)
 		auto posSymbolInput = vertex.find(symbolInput);
 		if (posSymbolInput == vertex.end())
 		{
-			m_meale.at(vertexFrom).insert({ symbolInput, SElementMatrix(elementMatrix.output, elementMatrix.to) });
+			multiset<SElementMatrix, compareElement> many;
+			many.insert(SElementMatrix(elementMatrix.output, elementMatrix.to));
+			m_meale.at(vertexFrom).insert({ symbolInput, many });
 		}
 		else
 		{
+			multiset<SElementMatrix, compareElement> many;
+			for (auto const &it2 : m_meale.at(vertexFrom).at(symbolInput))
+			{
+				many.insert(it2);
+			}
+			auto elem = SElementMatrix(elementMatrix.output, elementMatrix.to);
+			many.insert(elem);
+			//m_meale.at(vertexFrom).at(symbolInput).insert(elem);
+			m_meale.at(vertexFrom).at(symbolInput).insert(elem);
 			m_notDetermined = true;
 		}
 	}
@@ -33,5 +47,4 @@ table CViewAutomates::GetMachine() const
 {
 	return m_meale;
 }
-
 

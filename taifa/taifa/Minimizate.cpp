@@ -32,11 +32,6 @@ CMinimizate::CMinimizate(CViewAutomates const & mealy)
 		m_predTable = m_currentTable;
 		CompilingEmptyTable();
 	}	
-
-	//Output(m_currentTable);
-	//cout << "##########################################" << endl;
-	//cout << "##########################################" << endl;
-	//cout << "##########################################" << endl;
 }
 
 CViewAutomates CMinimizate::GetMinimizedMachine() const
@@ -46,7 +41,6 @@ CViewAutomates CMinimizate::GetMinimizedMachine() const
 	for (auto const & it : m_currentTable)
 	{
 		auto from = it.first;
-		cout << from << endl;
 		automate.addState({ "", from, "", "" });
 		auto iterMap = it.second.begin();
 		if (it.second.size() > 1)
@@ -63,7 +57,7 @@ CViewAutomates CMinimizate::GetMinimizedMachine() const
 		{
 
 			auto to = states[count];
-			auto output = iter->second.output;
+			auto output = (*iter->second.begin()).output;
 			auto input = iter->first;
 			automate.addState({ to, from, input, output });
 			++count;
@@ -81,7 +75,7 @@ void CMinimizate::FirstFillingTable()
 		string signal;
 		for (auto const &state : vertex.second)
 		{
-			signal += state.second.output;
+			signal += (*state.second.begin()).output;
 		}
 		groups[signal].push_back(vertex.first);
 		int count = 1;
@@ -93,10 +87,13 @@ void CMinimizate::FirstFillingTable()
 			}
 			++count;
 		}
-		for (auto &state : vertex.second)
+		/*for (auto &state : vertex.second)
 		{
-			state.second.output = to_string(count);
-		}
+			
+			auto *kp = &state.second.begin();
+			(*kp)->output = to_string(count);
+			kp->output = to_string(count);
+		}*/
 	}
 	
 	// Заполняю таблицу по группам, которые содержат вершины с пустыми значениями
@@ -125,7 +122,7 @@ void CMinimizate::FillingTable()
 			auto iter = ++state->second.begin();
 			for (iter; iter != state->second.end(); ++iter)
 			{
-				auto to = iter->second.to;
+				auto to = (*iter->second.begin()).to;
 				for (auto l : m_currentTable)
 				{
 					auto iterat = l.second.find(to);
