@@ -46,7 +46,6 @@ void CParser::ParseInputData(std::string const &input)
 				auto output = it.at("output");
 				m_automat.addState({ to, from, input, output });
 			}
-			//OutputMeale();
 		}
 		else if (machineType == "moore")
 		{
@@ -64,8 +63,6 @@ void CParser::ParseInputData(std::string const &input)
 				auto input = it.at("input");
 				m_automat.addState({ to, from, input, "" });
 			}
-			//OutputMoore();
-			//TranslateMooreToMeale();
 		}
 		else
 		{
@@ -91,14 +88,8 @@ void CParser::ParseInputCommand(std::string const &command)
 			auto type = com.at("type");
 			if (type == "translate-mil-to-mur") { TranslateMealeToMoore(); }
 			else if (type == "translate-mur-to-mil") { TranslateMooreToMeale(); }
-			else if (type == "minimize-mur")
-			{
-
-			}
-			else if (type == "minimize-mil")
-			{
-
-			}
+			else if (type == "minimize-mur") { MinimizateMoore(); }
+			else if (type == "minimize-mil") { MinimizateMeale(); }
 			else if (type == "determine") { DeterminateMeale(); }
 		}
 	}
@@ -121,7 +112,19 @@ void CParser::DeterminateMeale()
 	OutputMeale(SDeterminate::Determinate(m_automat));
 }
 
+void CParser::MinimizateMeale()
+{
+	CMinimizate min(m_automat);
+	OutputMeale(min.GetMinimizedMachine());
+}
 
+void CParser::MinimizateMoore()
+{
+	TranslateMooreToMeale();
+	CMinimizate min(m_automat);
+	m_automat = min.GetMinimizedMachine();
+	TranslateMealeToMoore();
+}
 
 void CParser::SaveToJsonFile()
 {

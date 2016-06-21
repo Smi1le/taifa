@@ -4,6 +4,7 @@
 #include "TranslateMooreToMeale.h"
 #include "TranslateMealeToMoore.h"
 #include "Determinate.h"
+#include "Minimizate.h"
 
 using VectorPairs = std::vector<std::pair<std::string, std::string>>;
 
@@ -18,6 +19,8 @@ private:
 	void TranslateMooreToMeale();
 	void TranslateMealeToMoore();
 	void DeterminateMeale();
+	void MinimizateMeale();
+	void MinimizateMoore();
 	void OutputMeale() const;
 	void OutputMeale(CViewAutomates const &automat) const;
 	void OutputMoore(CViewAutomates const &automat) const;
