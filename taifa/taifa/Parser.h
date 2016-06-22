@@ -23,7 +23,7 @@ private:
 	void OutputMeale(CViewAutomates const &automat) const;
 	void OutputMoore(CViewAutomates const &automat) const;
 	void OutputMoore() const;
-	std::string outputFileName;
+	std::string m_outputFileName;
 	CViewAutomates m_automat;
 	//VectorPairs m_commands;
 };

@@ -1,62 +1,52 @@
 {
     "state machine": [
         {
-            "id": "StateMachineX",
+            "id": null,
             "states": [
-                "q1",
-                "q2",
-                "q3"
-            ],
-            "transitions": [
-                {
-                    "from": "q1",
-                    "input": "x1",
-                    "output": "y1",
-                    "to": "q1"
-                },
-                {
-                    "from": "q1",
-                    "input": "x2",
-                    "output": "y1",
-                    "to": "q2"
-                },
-                {
-                    "from": "q2",
-                    "input": "x1",
-                    "output": "y2",
-                    "to": "q3"
-                }
+                68,
+                49
             ],
             "type": "meale"
         },
         {
-            "id": "StateMachineX",
+            "id": null,
             "states": [
-                [
-                    "q1"
-                ],
-                [
-                    "q2"
-                ]
+                68,
+                50
             ],
-            "transitions": [
-                {
-                    "from": "q1",
-                    "input": "x1",
-                    "to": "q1"
-                },
-                {
-                    "from": "q1",
-                    "input": "x2",
-                    "to": "q2"
-                },
-                {
-                    "from": "q2",
-                    "input": "x1",
-                    "to": "q3"
-                }
+            "type": "meale"
+        },
+        {
+            "id": null,
+            "states": [
+                68,
+                51
             ],
-            "type": "moore"
+            "type": "meale"
+        },
+        {
+            "id": null,
+            "states": [
+                68,
+                52
+            ],
+            "type": "meale"
+        },
+        {
+            "id": null,
+            "states": [
+                68,
+                53
+            ],
+            "type": "meale"
+        },
+        {
+            "id": null,
+            "states": [
+                68,
+                54
+            ],
+            "type": "meale"
         }
     ]
 }

@@ -11,9 +11,9 @@ int main()
 	std::string command;
 	std::string input;
 	std::string output;
-	command = "tests/commands.json";//argv[1];
-	input = "tests/minimizateMeale.json";//argv[2];
-	output = "tests/output.json";//argv[3];
+	command = "tests/commands3.json";//argv[1];
+	input = "tests/input2.json";//argv[2];
+	output = "tests/out.json";//argv[3];
 	CParser(command, input, output);
     return 0;
 }

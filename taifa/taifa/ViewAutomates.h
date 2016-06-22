@@ -31,6 +31,7 @@ public:
 	CViewAutomates() = default;
 	void addState(SSymbols const &elementMatrix);
 	table GetMachine() const;
+	bool isMealy = true;
 private:
 	table m_meale;
 	bool m_notDetermined = false;

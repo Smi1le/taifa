@@ -51,7 +51,6 @@ CViewAutomates CMinimizate::GetMinimizedMachine() const
 		auto states = iterMap->second;
 		auto st = m_mealy.find(vertex);
 		size_t count = 0;
-		cout << states.size() << " " << st->second.size() << endl;
 		auto iter = ++st->second.begin();
 		for (iter; iter != st->second.end(); ++iter)
 		{
@@ -87,13 +86,14 @@ void CMinimizate::FirstFillingTable()
 			}
 			++count;
 		}
-		/*for (auto &state : vertex.second)
+		for (auto &state : vertex.second)
 		{
-			
-			auto *kp = &state.second.begin();
-			(*kp)->output = to_string(count);
-			kp->output = to_string(count);
-		}*/
+			SElementMatrix mat(to_string(count), state.second.begin()->to);
+
+			multiset<SElementMatrix, compareElement> many;
+			many.insert(mat);
+			state.second.swap(many);
+		}
 	}
 	
 	// Заполняю таблицу по группам, которые содержат вершины с пустыми значениями
