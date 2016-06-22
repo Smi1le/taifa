@@ -74,6 +74,7 @@ CViewAutomates STranslateMealeToMoore::Translate(CViewAutomates const &meale)
 		}
 		++count;
 	}
+	moore.isMeale = false;
 	return moore;
 }
 

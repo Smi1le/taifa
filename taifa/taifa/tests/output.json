@@ -3,60 +3,160 @@
         {
             "id": "StateMachineX",
             "states": [
-                "q1",
-                "q2",
-                "q3"
+                "D1",
+                "D2",
+                "D3",
+                "D4",
+                "D5",
+                "D6"
             ],
             "transitions": [
                 {
-                    "from": "q1",
-                    "input": "x1",
-                    "output": "y1",
-                    "to": "q1"
+                    "from": "D1",
+                    "input": "",
+                    "output": "",
+                    "to": ""
                 },
                 {
-                    "from": "q1",
+                    "from": "D1",
+                    "input": "x1",
+                    "output": "1",
+                    "to": "D6"
+                },
+                {
+                    "from": "D1",
                     "input": "x2",
-                    "output": "y1",
-                    "to": "q2"
+                    "output": "1",
+                    "to": "D1"
                 },
                 {
-                    "from": "q2",
+                    "from": "D1",
+                    "input": "x3",
+                    "output": "1",
+                    "to": "D1"
+                },
+                {
+                    "from": "D2",
+                    "input": "",
+                    "output": "",
+                    "to": ""
+                },
+                {
+                    "from": "D2",
                     "input": "x1",
-                    "output": "y2",
-                    "to": "q3"
+                    "output": "1",
+                    "to": "D6"
+                },
+                {
+                    "from": "D2",
+                    "input": "x2",
+                    "output": "1",
+                    "to": "D3"
+                },
+                {
+                    "from": "D2",
+                    "input": "x3",
+                    "output": "1",
+                    "to": "D2"
+                },
+                {
+                    "from": "D3",
+                    "input": "",
+                    "output": "",
+                    "to": ""
+                },
+                {
+                    "from": "D3",
+                    "input": "x1",
+                    "output": "1",
+                    "to": "D4"
+                },
+                {
+                    "from": "D3",
+                    "input": "x2",
+                    "output": "1",
+                    "to": "D3"
+                },
+                {
+                    "from": "D3",
+                    "input": "x3",
+                    "output": "1",
+                    "to": "D4"
+                },
+                {
+                    "from": "D4",
+                    "input": "",
+                    "output": "",
+                    "to": ""
+                },
+                {
+                    "from": "D4",
+                    "input": "x1",
+                    "output": "3",
+                    "to": "D2"
+                },
+                {
+                    "from": "D4",
+                    "input": "x2",
+                    "output": "3",
+                    "to": "D1"
+                },
+                {
+                    "from": "D4",
+                    "input": "x3",
+                    "output": "3",
+                    "to": "D5"
+                },
+                {
+                    "from": "D5",
+                    "input": "",
+                    "output": "",
+                    "to": ""
+                },
+                {
+                    "from": "D5",
+                    "input": "x1",
+                    "output": "2",
+                    "to": "D1"
+                },
+                {
+                    "from": "D5",
+                    "input": "x2",
+                    "output": "2",
+                    "to": "D2"
+                },
+                {
+                    "from": "D5",
+                    "input": "x3",
+                    "output": "2",
+                    "to": "D4"
+                },
+                {
+                    "from": "D6",
+                    "input": "",
+                    "output": "",
+                    "to": ""
+                },
+                {
+                    "from": "D6",
+                    "input": "x1",
+                    "output": "2",
+                    "to": "D1"
+                },
+                {
+                    "from": "D6",
+                    "input": "x2",
+                    "output": "2",
+                    "to": "D1"
+                },
+                {
+                    "from": "D6",
+                    "input": "x3",
+                    "output": "2",
+                    "to": "D4"
                 }
             ],
-            "type": "meale"
-        },
-        {
-            "id": "StateMachineX",
-            "states": [
-                [
-                    "q1"
-                ],
-                [
-                    "q2"
-                ]
-            ],
-            "transitions": [
-                {
-                    "from": "q1",
-                    "input": "x1",
-                    "to": "q1"
-                },
-                {
-                    "from": "q1",
-                    "input": "x2",
-                    "to": "q2"
-                },
-                {
-                    "from": "q2",
-                    "input": "x1",
-                    "to": "q3"
-                }
-            ],
-            "type": "moore"
+            "type": "mealy"
         }
     ]
 }
